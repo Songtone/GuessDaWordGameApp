@@ -10,12 +10,134 @@
     android:paddingTop="16dp"
     tools:context="com.example.songt.guessdaword.MainGame">
 
-    
+
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score"
+        android:layout_marginTop="44dp"
+        android:layout_toEndOf="@+id/clue1"
+        android:layout_toRightOf="@+id/clue1"
+        android:text="Word PlaceHolder" />
+
+    <EditText
+
+        android:id="@+id/userAnswer"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/word"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:id="@+id/submitAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userAnswer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/clue1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:text="placeholder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/clue2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/clue1"
+        android:layout_alignBottom="@+id/clue1"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_toLeftOf="@+id/score"
+        android:layout_toStartOf="@+id/score"
+        android:text="placeholder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/clue3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/clue1"
+        android:layout_alignStart="@+id/clue1"
+        android:layout_below="@+id/clue1"
+        android:layout_marginTop="16dp"
+        android:text="placeholder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/clue4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/clue3"
+        android:layout_alignBottom="@+id/clue3"
+        android:layout_alignLeft="@+id/clue2"
+        android:layout_alignStart="@+id/clue2"
+        android:text="placeholder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/clue5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/clue3"
+        android:layout_alignStart="@+id/clue3"
+        android:layout_below="@+id/clue3"
+        android:layout_marginTop="23dp"
+        android:text="placeholder"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/clue6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/clue5"
+        android:layout_alignBottom="@+id/clue5"
+        android:layout_alignLeft="@+id/clue2"
+        android:layout_alignStart="@+id/clue2"
+        android:text="placeholder"
+        android:textSize="20sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/clue5"
+        android:layout_alignStart="@+id/clue5"
+        android:layout_below="@+id/clue5"
+        android:layout_marginTop="56dp"
+        android:text="Clue"
+        android:id="@+id/clueButton" />
+
+    <Button
+        android:id="@+id/giveUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/clueButton"
+        android:layout_alignBottom="@+id/clueButton"
+        android:layout_alignLeft="@+id/clue6"
+        android:layout_alignStart="@+id/clue6"
+        android:text="Give Up" />
+
 
 </RelativeLayout>
