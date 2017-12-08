@@ -17,9 +17,9 @@ public class WordLibrary {
 
     };
 
-    public String getQuestion(int a){
-        String question = mWordLibrary[a];
-        return question;
+    public String getWord(int a){
+        String word = mWordLibrary[a];
+        return word;
     }
 
     public String getClue1(int a){
@@ -46,7 +46,6 @@ public class WordLibrary {
         String clue6 = mWordClueLibrary[a][5];
         return clue6;
     }
-
 
     public String getCorrectAnswer(int a){
         String answer = mWordLibrary[a];

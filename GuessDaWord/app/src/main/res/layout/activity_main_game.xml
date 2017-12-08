@@ -23,13 +23,12 @@
         android:text="0" />
 
     <TextView
+        android:layout_centerHorizontal="true"
         android:id="@+id/word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/score"
         android:layout_marginTop="44dp"
-        android:layout_toEndOf="@+id/clue1"
-        android:layout_toRightOf="@+id/clue1"
         android:text="Word PlaceHolder" />
 
     <EditText
@@ -59,6 +58,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
+        android:textAlignment="center"
         android:text="placeholder"
         android:textSize="20sp" />
 
@@ -72,6 +72,7 @@
         android:layout_marginRight="6dp"
         android:layout_toLeftOf="@+id/score"
         android:layout_toStartOf="@+id/score"
+        android:textAlignment="center"
         android:text="placeholder"
         android:textSize="20sp" />
 
@@ -83,6 +84,7 @@
         android:layout_alignStart="@+id/clue1"
         android:layout_below="@+id/clue1"
         android:layout_marginTop="16dp"
+        android:textAlignment="center"
         android:text="placeholder"
         android:textSize="20sp" />
 
@@ -94,6 +96,7 @@
         android:layout_alignBottom="@+id/clue3"
         android:layout_alignLeft="@+id/clue2"
         android:layout_alignStart="@+id/clue2"
+        android:textAlignment="center"
         android:text="placeholder"
         android:textSize="20sp" />
 
@@ -105,6 +108,7 @@
         android:layout_alignStart="@+id/clue3"
         android:layout_below="@+id/clue3"
         android:layout_marginTop="23dp"
+        android:textAlignment="center"
         android:text="placeholder"
         android:textSize="20sp" />
 
@@ -116,6 +120,7 @@
         android:layout_alignBottom="@+id/clue5"
         android:layout_alignLeft="@+id/clue2"
         android:layout_alignStart="@+id/clue2"
+        android:textAlignment="center"
         android:text="placeholder"
         android:textSize="20sp" />
 
