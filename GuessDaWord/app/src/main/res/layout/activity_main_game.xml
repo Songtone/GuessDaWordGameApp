@@ -62,7 +62,9 @@
         android:layout_below="@+id/succeedView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="86dp"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:textAlignment="center"
+        android:hint="Your Guess"/>
 
     <Button
         android:id="@+id/submitAnswer"
