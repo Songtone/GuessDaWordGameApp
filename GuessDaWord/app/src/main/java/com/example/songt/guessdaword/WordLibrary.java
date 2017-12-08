@@ -7,19 +7,33 @@ package com.example.songt.guessdaword;
 public class WordLibrary {
 
     private String mWordLibrary[] = {
-            "water","fire"
+            "water","fire","pencil"
 
+    };
+    private String mRiddleLibrary[] = {
+            "Three lives have I. Gentle enough to soothe the skin",
+            "I am always hungry, I must always be fed",
+            "I usually wear a yellow coat i usually have a dark head i make marks wherever i go",
     };
 
     private String mWordClueLibrary [] [] = {
             {"drink","thirsty","liquid","clear","bottle","wet"},
             {"hot","combustion","heat","ignition","burn","inflammable"},
+            {"wood","lead","paper","pointy","eraser","write"},
 
     };
 
     public String getWord(int a){
         String word = mWordLibrary[a];
         return word;
+    }
+    public String getRiddle(int a){
+        String riddle = mRiddleLibrary[a];
+        return riddle;
+    }
+    public int getWordLibraryLength(){
+        int length = mWordLibrary.length;
+        return length;
     }
 
     public String getClue1(int a){
@@ -47,8 +61,4 @@ public class WordLibrary {
         return clue6;
     }
 
-    public String getCorrectAnswer(int a){
-        String answer = mWordLibrary[a];
-        return answer;
-    }
 }

@@ -8,8 +8,28 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:focusableInTouchMode="true"
     tools:context="com.example.songt.guessdaword.MainGame">
 
+    <TextView
+       android:textAlignment="center"
+        android:id="@+id/succeedView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/riddleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/succeedView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Riddle placeholder"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/score"
@@ -23,22 +43,26 @@
         android:text="0" />
 
     <TextView
-        android:layout_centerHorizontal="true"
         android:id="@+id/word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/score"
-        android:layout_marginTop="44dp"
-        android:text="Word PlaceHolder" />
+        android:layout_alignBaseline="@+id/userAnswer"
+        android:layout_alignBottom="@+id/userAnswer"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="sgg"
+        android:visibility="invisible" />
 
     <EditText
 
         android:id="@+id/userAnswer"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/word"
+        android:layout_below="@+id/succeedView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="86dp"
+        android:visibility="visible"/>
 
     <Button
         android:id="@+id/submitAnswer"
@@ -53,13 +77,12 @@
         android:id="@+id/clue1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:textAlignment="center"
-        android:text="placeholder"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_toLeftOf="@+id/submitAnswer"
+        android:layout_toStartOf="@+id/submitAnswer"
+        android:text="Clue 1"
         android:textSize="20sp" />
 
     <TextView
@@ -68,12 +91,11 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/clue1"
         android:layout_alignBottom="@+id/clue1"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_toLeftOf="@+id/score"
-        android:layout_toStartOf="@+id/score"
-        android:textAlignment="center"
-        android:text="placeholder"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_toEndOf="@+id/submitAnswer"
+        android:layout_toRightOf="@+id/submitAnswer"
+        android:text="Clue 2"
         android:textSize="20sp" />
 
     <TextView
@@ -84,8 +106,7 @@
         android:layout_alignStart="@+id/clue1"
         android:layout_below="@+id/clue1"
         android:layout_marginTop="16dp"
-        android:textAlignment="center"
-        android:text="placeholder"
+        android:text="Clue 3"
         android:textSize="20sp" />
 
     <TextView
@@ -96,8 +117,7 @@
         android:layout_alignBottom="@+id/clue3"
         android:layout_alignLeft="@+id/clue2"
         android:layout_alignStart="@+id/clue2"
-        android:textAlignment="center"
-        android:text="placeholder"
+        android:text="Clue 4"
         android:textSize="20sp" />
 
     <TextView
@@ -108,8 +128,7 @@
         android:layout_alignStart="@+id/clue3"
         android:layout_below="@+id/clue3"
         android:layout_marginTop="23dp"
-        android:textAlignment="center"
-        android:text="placeholder"
+        android:text="Clue 5"
         android:textSize="20sp" />
 
     <TextView
@@ -120,19 +139,18 @@
         android:layout_alignBottom="@+id/clue5"
         android:layout_alignLeft="@+id/clue2"
         android:layout_alignStart="@+id/clue2"
-        android:textAlignment="center"
-        android:text="placeholder"
+        android:text="Clue 6"
         android:textSize="20sp" />
 
     <Button
+        android:id="@+id/clueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/clue5"
-        android:layout_alignStart="@+id/clue5"
         android:layout_below="@+id/clue5"
         android:layout_marginTop="56dp"
-        android:text="Clue"
-        android:id="@+id/clueButton" />
+        android:layout_toLeftOf="@+id/userAnswer"
+        android:layout_toStartOf="@+id/userAnswer"
+        android:text="Clue" />
 
     <Button
         android:id="@+id/giveUpButton"
@@ -140,9 +158,19 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/clueButton"
         android:layout_alignBottom="@+id/clueButton"
-        android:layout_alignLeft="@+id/clue6"
-        android:layout_alignStart="@+id/clue6"
+        android:layout_centerHorizontal="true"
         android:text="Give Up" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/giveUpButton"
+        android:layout_alignBottom="@+id/giveUpButton"
+        android:layout_toLeftOf="@+id/score"
+        android:layout_toStartOf="@+id/score"
+        android:visibility="invisible"
+        android:text="Next" />
 
 
 </RelativeLayout>
