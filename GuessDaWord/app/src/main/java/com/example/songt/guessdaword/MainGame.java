@@ -2,12 +2,15 @@ package com.example.songt.guessdaword;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -23,6 +26,8 @@ public class MainGame extends AppCompatActivity {
     private TextView mClue1,mClue2,mClue3,mClue4,mClue5,mClue6,mWordView,mSucceedView,mRiddleView;
 
     private EditText mGuessText;
+
+    private ImageView mLogoView;
 
     private int mWordNumber = 0;
     private int numberOfCluesUsed = 0;
@@ -47,12 +52,19 @@ public class MainGame extends AppCompatActivity {
 
         mGuessText = (EditText) findViewById(R.id.userAnswer);
 
+        Bitmap bMap = BitmapFactory.decodeResource(getResources(), R.drawable.sot_final);
+        Bitmap bMapScaled = Bitmap.createScaledBitmap(bMap, 100, 100, true);
+        mLogoView = (ImageView) findViewById(R.id.logo);
+
         mClue1 = (TextView) findViewById(R.id.clue1);
         mClue2 = (TextView) findViewById(R.id.clue2);
         mClue3 = (TextView) findViewById(R.id.clue3);
         mClue4 = (TextView) findViewById(R.id.clue4);
         mClue5 = (TextView) findViewById(R.id.clue5);
         mClue6 = (TextView) findViewById(R.id.clue6);
+
+
+        mLogoView.setImageBitmap(bMapScaled);
 
         updateWord();
 
@@ -106,12 +118,14 @@ public class MainGame extends AppCompatActivity {
                 String s = mWordLibrary.getWord(mWordNumber);
 
                 if( r.equals(s)){
-                    mSucceedView.setText("YAY");
+                    mSucceedView.setText("CORRECT!");
                     mWordView.setVisibility(view.VISIBLE);
                     mNextButton.setVisibility(view.VISIBLE);
                     mGuessText.setVisibility(view.INVISIBLE);
+                    mSucceedView.setVisibility(view.VISIBLE);
                 }else{
-                    mSucceedView.setText("Wrong!");
+                    mSucceedView.setText("WRONG!");
+                    mSucceedView.setVisibility(view.VISIBLE);
                 }
             }
         });
@@ -121,6 +135,8 @@ public class MainGame extends AppCompatActivity {
                 mWordView.setVisibility(view.VISIBLE);
                 mNextButton.setVisibility(view.VISIBLE);
                 mGuessText.setVisibility(view.INVISIBLE);
+                mSucceedView.setText("Awwww!");
+                mSucceedView.setVisibility(view.VISIBLE);
                 tempScore = 0;
             }
         });
@@ -142,6 +158,7 @@ public class MainGame extends AppCompatActivity {
                     updateWord();
                     mWordView.setVisibility(view.INVISIBLE);
                     mNextButton.setVisibility(view.INVISIBLE);
+                    mSucceedView.setVisibility(view.INVISIBLE);
                     mGuessText.setVisibility(view.VISIBLE);
                     mGuessText.setText("");
                     mSucceedView.setText("");
