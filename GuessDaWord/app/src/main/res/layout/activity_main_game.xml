@@ -31,16 +31,6 @@
         android:text="Riddle placeholder"
         android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:text="0" />
 
     <TextView
         android:id="@+id/word"
@@ -70,8 +60,9 @@
         android:id="@+id/submitAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/giveUpButton"
+        android:layout_alignStart="@+id/giveUpButton"
         android:layout_below="@+id/userAnswer"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
         android:text="Submit" />
 
@@ -169,10 +160,10 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/giveUpButton"
         android:layout_alignBottom="@+id/giveUpButton"
-        android:layout_toLeftOf="@+id/score"
-        android:layout_toStartOf="@+id/score"
-        android:visibility="invisible"
-        android:text="Next" />
+        android:layout_toEndOf="@+id/userAnswer"
+        android:layout_toRightOf="@+id/userAnswer"
+        android:text="Next"
+        android:visibility="invisible" />
 
 
 </RelativeLayout>

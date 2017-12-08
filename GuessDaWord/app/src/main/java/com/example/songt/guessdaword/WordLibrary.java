@@ -7,19 +7,26 @@ package com.example.songt.guessdaword;
 public class WordLibrary {
 
     private String mWordLibrary[] = {
-            "water","fire","pencil"
+            "water","fire","pencil","snow","silence","wind",
 
     };
     private String mRiddleLibrary[] = {
             "Three lives have I. Gentle enough to soothe the skin",
             "I am always hungry, I must always be fed",
             "I usually wear a yellow coat i usually have a dark head i make marks wherever i go",
+            "I fly when I am born, lie when I'm alive, and run when I am dead.",
+            "What is broken, every time it's spoken?",
+            "Voiceless it cries, Wingless flutters, Toothless bites, Mouthless mutters.",
+
     };
 
     private String mWordClueLibrary [] [] = {
             {"drink","thirsty","liquid","clear","bottle","wet"},
             {"hot","combustion","heat","ignition","burn","inflammable"},
             {"wood","lead","paper","pointy","eraser","write"},
+            {"unique","light","white","cold","crystal","precipitate"},
+            {"hush","tranquility","secrecy","mute","peaceful","quiet"},
+            {"air","invisible","odorless","blow","draft","breeze"}
 
     };
 

@@ -1,8 +1,11 @@
 package com.example.songt.guessdaword;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,8 +24,10 @@ public class MainGame extends AppCompatActivity {
 
     private EditText mGuessText;
 
-    private int mWordNumber;
+    private int mWordNumber = 0;
     private int numberOfCluesUsed = 0;
+    private int tempScore = 6;
+    private int actualScore = 0;
 
     Random r = new Random();
 
@@ -58,26 +63,32 @@ public class MainGame extends AppCompatActivity {
                 if(numberOfCluesUsed == 0) {
                     showClue1();
                     numberOfCluesUsed++;
+                    tempScore--;
                 }
                 else if(numberOfCluesUsed == 1){
                     showClue2();
                     numberOfCluesUsed++;
+                    tempScore--;
                 }
                 else if(numberOfCluesUsed == 2){
                     showClue3();
                     numberOfCluesUsed++;
+                    tempScore--;
                 }
                 else if(numberOfCluesUsed == 3){
                     showClue4();
                     numberOfCluesUsed++;
+                    tempScore--;
                 }
                 else if(numberOfCluesUsed == 4){
                     showClue5();
                     numberOfCluesUsed++;
+                    tempScore--;
                 }
                 else if(numberOfCluesUsed == 5){
                     showClue6();
                     numberOfCluesUsed++;
+                    tempScore--;
                 }
             }
         });
@@ -85,6 +96,12 @@ public class MainGame extends AppCompatActivity {
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
+
                 String r = mGuessText.getText().toString();
                 String s = mWordLibrary.getWord(mWordNumber);
 
@@ -104,30 +121,45 @@ public class MainGame extends AppCompatActivity {
                 mWordView.setVisibility(view.VISIBLE);
                 mNextButton.setVisibility(view.VISIBLE);
                 mGuessText.setVisibility(view.INVISIBLE);
+                tempScore = 0;
             }
         });
 
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateWord();
-                mWordView.setVisibility(view.INVISIBLE);
-                mNextButton.setVisibility(view.INVISIBLE);
-                mGuessText.setVisibility(view.VISIBLE);
-                mGuessText.setText("");
-                mSucceedView.setText("");
-                mClue1.setText("Clue 1");
-                mClue2.setText("Clue 2");
-                mClue3.setText("Clue 3");
-                mClue4.setText("Clue 4");
-                mClue5.setText("Clue 5");
-                mClue6.setText("Clue 6");
-                numberOfCluesUsed = 0;
+
+                if(mWordNumber == mWordLibrary.getWordLibraryLength()-1){
+                    Intent score = new Intent(MainGame.this,Scoreboard.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("finalScore",actualScore);
+                    score.putExtras(bundle);
+                    MainGame.this.finish();
+                    startActivity(score);
+                }
+                else {
+                    mWordNumber++;
+                    updateWord();
+                    mWordView.setVisibility(view.INVISIBLE);
+                    mNextButton.setVisibility(view.INVISIBLE);
+                    mGuessText.setVisibility(view.VISIBLE);
+                    mGuessText.setText("");
+                    mSucceedView.setText("");
+                    mClue1.setText("Clue 1");
+                    mClue2.setText("Clue 2");
+                    mClue3.setText("Clue 3");
+                    mClue4.setText("Clue 4");
+                    mClue5.setText("Clue 5");
+                    mClue6.setText("Clue 6");
+                    numberOfCluesUsed = 0;
+                    actualScore = actualScore + tempScore;
+                    tempScore = mWordLibrary.getWordLibraryLength();
+                }
             }
         });
     }
     public void updateWord(){
-        mWordNumber = r.nextInt(mWordLibrary.getWordLibraryLength());
+        //mWordNumber = r.nextInt(mWordLibrary.getWordLibraryLength());
         mWordView.setText(mWordLibrary.getWord(mWordNumber));
         mRiddleView.setText(mWordLibrary.getRiddle(mWordNumber));
     }
