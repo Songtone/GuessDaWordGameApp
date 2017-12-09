@@ -126,6 +126,7 @@ public class MainGame extends AppCompatActivity {
                 }else{
                     mSucceedView.setText("WRONG!");
                     mSucceedView.setVisibility(view.VISIBLE);
+                    mGuessText.setText("");
                 }
             }
         });

@@ -19,7 +19,7 @@
         android:textSize="30dp"
         android:layout_marginTop="26dp"
         android:text="THANKS FOR PLAYING!" />
-    
+
     <TextView
         android:textColor="#009688"
         android:id="@+id/scoreboard"
