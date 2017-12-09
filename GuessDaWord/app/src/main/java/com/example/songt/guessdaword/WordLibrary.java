@@ -7,7 +7,7 @@ package com.example.songt.guessdaword;
 public class WordLibrary {
 
     private String mWordLibrary[] = {
-            "water","fire","pencil","snow","silence","wind",
+            "water","fire","pencil","snow","silence","wind","tree","penguin","guitar","moon"
 
     };
     private String mRiddleLibrary[] = {
@@ -17,6 +17,10 @@ public class WordLibrary {
             "I fly when I am born, lie when I'm alive, and run when I am dead.",
             "What is broken, every time it's spoken?",
             "Voiceless it cries, Wingless flutters, Toothless bites, Mouthless mutters.",
+            "I grow up big and tall and lose my clothes in the fall.",
+            "Flying is but a wish, but I can swim like a fish.",
+            "If you pull my strings i don't get mad, i sing. What am I?",
+            "Always old, sometimes new. Never sad, sometimes blue. Never empty, sometimes full. Never pushes, always pulls."
 
     };
 
@@ -26,7 +30,11 @@ public class WordLibrary {
             {"wood","lead","paper","pointy","eraser","write"},
             {"unique","light","white","cold","crystal","precipitate"},
             {"hush","tranquility","secrecy","mute","peaceful","quiet"},
-            {"air","invisible","odorless","blow","draft","breeze"}
+            {"air","invisible","odorless","blow","draft","breeze"},
+            {"nature","alive","oxygen","brown","wood","leaves"},
+            {"tuxedo","bicolored","aquatic","waddle","flightless","bird"},
+            {"fretting","plucking","vibration","wooden","acoustic","instrument"},
+            {"cheese","round","tide","night","sky","crescent"}
 
     };
 
