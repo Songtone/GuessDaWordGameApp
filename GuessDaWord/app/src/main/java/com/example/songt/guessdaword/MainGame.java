@@ -123,6 +123,7 @@ public class MainGame extends AppCompatActivity {
                     mNextButton.setVisibility(view.VISIBLE);
                     mGuessText.setVisibility(view.INVISIBLE);
                     mSucceedView.setVisibility(view.VISIBLE);
+                    mGiveUp.setVisibility(View.INVISIBLE);
                 }else{
                     mSucceedView.setText("WRONG!");
                     mSucceedView.setVisibility(view.VISIBLE);
@@ -145,7 +146,8 @@ public class MainGame extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                actualScore = actualScore + tempScore;
+                tempScore = 6;
                 if(mWordNumber == mWordLibrary.getWordLibraryLength()-1){
                     Intent score = new Intent(MainGame.this,Scoreboard.class);
                     Bundle bundle = new Bundle();
@@ -160,6 +162,7 @@ public class MainGame extends AppCompatActivity {
                     mWordView.setVisibility(view.INVISIBLE);
                     mNextButton.setVisibility(view.INVISIBLE);
                     mSucceedView.setVisibility(view.INVISIBLE);
+                    mGiveUp.setVisibility(View.VISIBLE);
                     mGuessText.setVisibility(view.VISIBLE);
                     mGuessText.setText("");
                     mSucceedView.setText("");
@@ -170,8 +173,7 @@ public class MainGame extends AppCompatActivity {
                     mClue5.setText("Clue 5");
                     mClue6.setText("Clue 6");
                     numberOfCluesUsed = 0;
-                    actualScore = actualScore + tempScore;
-                    tempScore = mWordLibrary.getWordLibraryLength();
+
                 }
             }
         });
