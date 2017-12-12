@@ -12,20 +12,21 @@
     tools:context="com.example.songt.guessdaword.MainGame">
 
     <TextView
-        android:textColor="#D32F2F"
-       android:textAlignment="center"
         android:id="@+id/succeedView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/submitAnswer"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignRight="@+id/submitAnswer"
+        android:layout_marginTop="8dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        android:text="test"
+        android:textAlignment="center"
+        android:textColor="#D32F2F"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:visibility="invisible"
-        android:text="test" />
+        android:visibility="invisible" />
 
     <TextView
         android:textColor="#BBDEFB"
@@ -80,88 +81,65 @@
 
     <TextView
         android:id="@+id/clue1"
-        android:textColor="#009688"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_toLeftOf="@+id/submitAnswer"
-        android:layout_toStartOf="@+id/submitAnswer"
+        android:layout_alignEnd="@+id/logo"
+        android:layout_alignRight="@+id/logo"
+        android:layout_below="@+id/submitAnswer"
+        android:layout_marginTop="50dp"
         android:text="Clue 1"
+        android:textAlignment="center"
+        android:textColor="#009688"
         android:textSize="20sp" />
 
     <TextView
-        android:textColor="#009688"
         android:id="@+id/clue2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/clue1"
-        android:layout_alignBottom="@+id/clue1"
-        android:layout_marginLeft="22dp"
-        android:layout_marginStart="22dp"
-        android:layout_toEndOf="@+id/submitAnswer"
-        android:layout_toRightOf="@+id/submitAnswer"
+        android:layout_alignLeft="@+id/clue3"
+        android:layout_alignStart="@+id/clue3"
+        android:layout_below="@+id/clue1"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
         android:text="Clue 2"
+        android:textColor="#009688"
         android:textSize="20sp" />
 
     <TextView
-        android:textColor="#009688"
         android:id="@+id/clue3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/clue1"
         android:layout_alignStart="@+id/clue1"
-        android:layout_below="@+id/clue1"
-        android:layout_marginTop="16dp"
+        android:layout_below="@+id/clue2"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
         android:text="Clue 3"
+        android:textColor="#009688"
         android:textSize="20sp" />
 
     <TextView
-        android:textColor="#009688"
         android:id="@+id/clue4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/clue3"
-        android:layout_alignBottom="@+id/clue3"
-        android:layout_alignLeft="@+id/clue2"
-        android:layout_alignStart="@+id/clue2"
-        android:text="Clue 4"
-        android:textSize="20sp" />
-
-    <TextView
-        android:textColor="#009688"
-        android:id="@+id/clue5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/clue3"
         android:layout_alignStart="@+id/clue3"
         android:layout_below="@+id/clue3"
-        android:layout_marginTop="23dp"
-        android:text="Clue 5"
-        android:textSize="20sp" />
-
-    <TextView
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:text="Clue 4"
         android:textColor="#009688"
-        android:id="@+id/clue6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/clue5"
-        android:layout_alignBottom="@+id/clue5"
-        android:layout_alignLeft="@+id/clue2"
-        android:layout_alignStart="@+id/clue2"
-        android:text="Clue 6"
         android:textSize="20sp" />
 
     <Button
-        android:backgroundTint="#009688"
         android:id="@+id/clueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/clue5"
-        android:layout_marginTop="56dp"
+        android:layout_above="@+id/logo"
+        android:layout_marginBottom="22dp"
         android:layout_toLeftOf="@+id/userAnswer"
         android:layout_toStartOf="@+id/userAnswer"
+        android:backgroundTint="#009688"
         android:text="Clue" />
 
     <Button

@@ -31,7 +31,7 @@ public class MainGame extends AppCompatActivity {
 
     private int mWordNumber = 0;
     private int numberOfCluesUsed = 0;
-    private int tempScore = 6;
+    private int tempScore = 4;
     private int actualScore = 0;
 
     Random r = new Random();
@@ -60,8 +60,7 @@ public class MainGame extends AppCompatActivity {
         mClue2 = (TextView) findViewById(R.id.clue2);
         mClue3 = (TextView) findViewById(R.id.clue3);
         mClue4 = (TextView) findViewById(R.id.clue4);
-        mClue5 = (TextView) findViewById(R.id.clue5);
-        mClue6 = (TextView) findViewById(R.id.clue6);
+
 
 
         mLogoView.setImageBitmap(bMapScaled);
@@ -92,16 +91,7 @@ public class MainGame extends AppCompatActivity {
                     numberOfCluesUsed++;
                     tempScore--;
                 }
-                else if(numberOfCluesUsed == 4){
-                    showClue5();
-                    numberOfCluesUsed++;
-                    tempScore--;
-                }
-                else if(numberOfCluesUsed == 5){
-                    showClue6();
-                    numberOfCluesUsed++;
-                    tempScore--;
-                }
+
             }
         });
 
@@ -195,10 +185,5 @@ public class MainGame extends AppCompatActivity {
     public void showClue4(){
         mClue4.setText(mWordLibrary.getClue4(mWordNumber));
     }
-    public void showClue5(){
-        mClue5.setText(mWordLibrary.getClue5(mWordNumber));
-    }
-    public void showClue6(){
-        mClue6.setText(mWordLibrary.getClue6(mWordNumber));
-    }
+
 }

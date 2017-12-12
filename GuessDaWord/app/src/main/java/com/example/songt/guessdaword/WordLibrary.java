@@ -25,16 +25,16 @@ public class WordLibrary {
     };
 
     private String mWordClueLibrary [] [] = {
-            {"drink","thirsty","liquid","clear","bottle","wet"},
-            {"hot","combustion","heat","ignition","burn","inflammable"},
-            {"wood","lead","paper","pointy","eraser","write"},
-            {"unique","light","white","cold","crystal","precipitate"},
-            {"hush","tranquility","secrecy","mute","peaceful","quiet"},
-            {"air","invisible","odorless","blow","draft","breeze"},
-            {"nature","alive","oxygen","brown","wood","leaves"},
-            {"tuxedo","bicolored","aquatic","waddle","flightless","bird"},
-            {"fretting","plucking","vibration","wooden","acoustic","instrument"},
-            {"cheese","round","tide","night","sky","crescent"}
+            {"liquid","clear","bottle","wet"},
+            {"hot","heat","ignition","burn",},
+            {"wood","lead","paper","write"},
+            {"white","cold","crystal","precipitate"},
+            {"tranquility","mute","peaceful","quiet"},
+            {"air","odorless","draft","breeze"},
+            {"brown","wood","nature","leaves"},
+            {"tuxedo","aquatic","waddle","bird"},
+            {"vibration","fretting","acoustic","instrument"},
+            {"cheese","tide","night","sky"}
 
     };
 
@@ -66,14 +66,6 @@ public class WordLibrary {
     public String getClue4(int a){
         String clue4 = mWordClueLibrary[a][3];
         return clue4;
-    }
-    public String getClue5(int a){
-        String clue5 = mWordClueLibrary[a][4];
-        return clue5;
-    }
-    public String getClue6(int a){
-        String clue6 = mWordClueLibrary[a][5];
-        return clue6;
     }
 
 }
