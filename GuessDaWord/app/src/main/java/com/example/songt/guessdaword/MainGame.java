@@ -29,7 +29,7 @@ public class MainGame extends AppCompatActivity {
 
     private ImageView mLogoView;
 
-    private int mWordNumber = 0;
+    private int mWordNumber;
     private int numberOfCluesUsed = 0;
     private int tempScore = 4;
     private int actualScore = 0;
@@ -64,7 +64,7 @@ public class MainGame extends AppCompatActivity {
 
 
         mLogoView.setImageBitmap(bMapScaled);
-
+        mWordNumber = 0;
         updateWord();
 
 
@@ -146,7 +146,7 @@ public class MainGame extends AppCompatActivity {
                     MainGame.this.finish();
                     startActivity(score);
                 }
-                else {
+               else {
                     mWordNumber++;
                     updateWord();
                     mWordView.setVisibility(view.INVISIBLE);
@@ -160,8 +160,6 @@ public class MainGame extends AppCompatActivity {
                     mClue2.setText("Clue 2");
                     mClue3.setText("Clue 3");
                     mClue4.setText("Clue 4");
-                    mClue5.setText("Clue 5");
-                    mClue6.setText("Clue 6");
                     numberOfCluesUsed = 0;
 
                 }

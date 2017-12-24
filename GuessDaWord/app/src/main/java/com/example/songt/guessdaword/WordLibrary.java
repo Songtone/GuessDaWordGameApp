@@ -11,7 +11,7 @@ public class WordLibrary {
 
     };
     private String mRiddleLibrary[] = {
-            "Three lives have I. Gentle enough to soothe the skin",
+            "I have three lives. Gentle enough to soothe the skin",
             "I am always hungry, I must always be fed",
             "I usually wear a yellow coat i usually have a dark head i make marks wherever i go",
             "I fly when I am born, lie when I'm alive, and run when I am dead.",
